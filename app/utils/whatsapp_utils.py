@@ -19,8 +19,11 @@ def get_text_message_input(recipient, text):
             "messaging_product": "whatsapp",
             "recipient_type": "individual",
             "to": recipient,
-            "type": "text",
-            "text": {"preview_url": False, "body": text},
+            "type": "template",
+            "template": {
+                "name": "custom_food", 
+                "language": {"code": "en_US"}
+            }
         }
     )
 

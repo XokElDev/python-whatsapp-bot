@@ -18,7 +18,7 @@ def upload_file(path):
     return file
 
 
-file = upload_file("../data/airbnb-faq.pdf")
+file = upload_file("../data/belleza-natural-sa.txt")
 
 
 # --------------------------------------------------------------
@@ -29,10 +29,10 @@ def create_assistant(file):
     You currently cannot set the temperature for Assistant via the API.
     """
     assistant = client.beta.assistants.create(
-        name="WhatsApp AirBnb Assistant",
-        instructions="You're a helpful WhatsApp assistant that can assist guests that are staying in our Paris AirBnb. Use your knowledge base to best respond to customer queries. If you don't know the answer, say simply that you cannot help with question and advice to contact the host directly. Be friendly and funny.",
+        name="WhatsApp Belleza natural Assistant",
+        instructions="Eres un asistente que ayudara a entender a los clientes como funciona nuestra empresa. Los mensajes han de ser breves siempre que sea posible. Si el usuario pregunta por informacion que el archivo adjunto no contiene contestale que no contienes esa informacion.",
         tools=[{"type": "retrieval"}],
-        model="gpt-4-1106-preview",
+        model="gpt-3.5-turbo-0125",
         file_ids=[file.id],
     )
     return assistant
@@ -91,7 +91,7 @@ def generate_response(message_body, wa_id, name):
 # --------------------------------------------------------------
 def run_assistant(thread):
     # Retrieve the Assistant
-    assistant = client.beta.assistants.retrieve("asst_7Wx2nQwoPWSf710jrdWTDlfE")
+    assistant = client.beta.assistants.retrieve("asst_At4BGlfKfWbZS1WDnlCfiDg2")
 
     # Run the assistant
     run = client.beta.threads.runs.create(

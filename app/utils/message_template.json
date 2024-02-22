@@ -1,0 +1,68 @@
+{
+    "messaging_product": "whatsapp",
+    "recipient_type": "individual",
+    "to": "PHONE_NUMBER",
+    "type": "template",
+    "template": {
+      "name": "TEMPLATE_NAME",
+      "language": {
+        "code": "LANGUAGE_AND_LOCALE_CODE"
+      },
+      "components": [
+        {
+          "type": "header",
+          "parameters": [
+            {
+                "type": "text",
+                "text": "TEXT_STRING"
+            }
+          ]
+        },
+        {
+          "type": "body",
+          "parameters": [
+            {
+              "type": "text",
+              "text": "TEXT_STRING"
+            },
+            {
+              "type": "currency",
+              "currency": {
+                "fallback_value": "VALUE",
+                "code": "USD",
+                "amount_1000": 1000
+              }
+            },
+            {
+              "type": "date_time",
+              "date_time": {
+                "fallback_value": "MONTH DAY, YEAR"
+              }
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "sub_type": "quick_reply",
+          "index": "0",
+          "parameters": [
+            {
+              "type": "payload",
+              "payload": "PAYLOAD"
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "sub_type": "quick_reply",
+          "index": "1",
+          "parameters": [
+            {
+              "type": "payload",
+              "payload": "PAYLOAD"
+            }
+          ]
+        }
+      ]
+    }
+  }
